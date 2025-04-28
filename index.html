@@ -1,13 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Data Science Projects - Atharva</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Stroke Prediction Project - Full Concepts</title>
 </head>
 <body>
-    <h1>Welcome to My Data Science Blog</h1>
-    <p>Hi! I'm Atharva, a data science enthusiast. This is one of my first projects:</p>
-    <h2>Heart Stroke Prediction</h2>
-    <p>This project predicts the likelihood of a heart stroke based on patient data. Built using Google Colab and Python.</p>
-    <p><a href="https://github.com/ByteXBit/HeartStrokePrediction/blob/main/HeartStroke.ipynb" target="_blank">View the Notebook here</a></p>
+
+<h1>❤️ Heart Stroke Prediction Project</h1>
+
+<p>This guide explains every concept used in the HeartStroke.ipynb file. It is designed to be a complete walkthrough for anyone interested in understanding or building a similar project.</p>
+
+<h2>📚 Full Concepts List</h2>
+
+<h3>1. Data Loading</h3>
+<ul>
+  <li>Using <code>pandas</code> to load datasets.</li>
+</ul>
+<pre><code>import pandas as pd
+data = pd.read_csv('stroke-data.csv')</code></pre>
+
+<h3>2. Exploratory Data Analysis (EDA)</h3>
+
+<h4>2.1 Check Basic Information</h4>
+<ul>
+  <li><code>data.info()</code> - Check non-null entries and types.</li>
+  <li><code>data.describe()</code> - Get statistical summaries.</li>
+</ul>
+
+<h4>2.2 Missing Values</h4>
+<ul>
+  <li><code>data.isnull().sum()</code> - Find missing values.</li>
+  <li>Handle missing data by dropping or imputing.</li>
+</ul>
+
+<h4>2.3 Visualizations</h4>
+<ul>
+  <li>Libraries: <code>matplotlib.pyplot</code>, <code>seaborn</code></li>
+  <li>Examples:
+    <ul>
+      <li>Count plots for stroke outcomes.</li>
+      <li>Heatmaps for feature correlations.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>3. Feature Engineering</h3>
+<ul>
+  <li>Label Encoding categorical data using <code>LabelEncoder</code>.</li>
+  <li>One-Hot Encoding for multi-category features if needed.</li>
+  <li>Feature selection to retain important features.</li>
+</ul>
+<pre><code>from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+data['gender'] = le.fit_transform(data['gender'])</code></pre>
+
+<h3>4. Train-Test Split</h3>
+<p>Dividing the dataset to train and test the model separately:</p>
+<pre><code>from sklearn.model_selection import train_test_split
+
+X = data.drop('stroke', axis=1)
+y = data['stroke']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)</code></pre>
+
+<h3>5. Model Building</h3>
+<ul>
+  <li>Logistic Regression</li>
+  <li>Decision Tree Classifier</li>
+  <li>Random Forest Classifier</li>
+  <li>XGBoost (optional)</li>
+</ul>
+<pre><code>from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X_train, y_train)</code></pre>
+
+<h3>6. Model Evaluation</h3>
+<ul>
+  <li>Accuracy, Precision, Recall, F1-Score</li>
+  <li>Confusion Matrix to understand prediction distribution</li>
+</ul>
+<pre><code>from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+y_pred = model.predict(X_test)
+print(accuracy_score(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))</code></pre>
+
+<h3>7. ROC Curve and AUC Score</h3>
+<ul>
+  <li>ROC - plots True Positive Rate vs False Positive Rate.</li>
+  <li>AUC - area under the ROC curve, a performance metric.</li>
+</ul>
+<pre><code>from sklearn.metrics import roc_auc_score, roc_curve
+
+fpr, tpr, thresholds = roc_curve(y_test, model.predict_proba(X_test)[:,1])</code></pre>
+
+<h3>8. Conclusion</h3>
+<ul>
+  <li>Identifying best performing model.</li>
+  <li>Feature importance for stroke prediction.</li>
+  <li>Discussion on limitations and improvements.</li>
+</ul>
+
+<h2>🔌 Full Concepts Summary</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data Loading</td>
+      <td>Using pandas DataFrame to load CSV</td>
+    </tr>
+    <tr>
+      <td>Data Cleaning</td>
+      <td>Handling missing values, fixing data types</td>
+    </tr>
+    <tr>
+      <td>Exploratory Data Analysis</td>
+      <td>Visualization with seaborn and matplotlib</td>
+    </tr>
+    <tr>
+      <td>Feature Engineering</td>
+      <td>Label Encoding, Feature Selection</td>
+    </tr>
+    <tr>
+      <td>Splitting Dataset</td>
+      <td>train_test_split from sklearn</td>
+    </tr>
+    <tr>
+      <td>Model Building</td>
+      <td>Logistic Regression, Decision Tree, Random Forest</td>
+    </tr>
+    <tr>
+      <td>Model Evaluation</td>
+      <td>Accuracy, Precision, Recall, F1-Score, Confusion Matrix</td>
+    </tr>
+    <tr>
+      <td>Advanced Metrics</td>
+      <td>ROC Curve, AUC Score</td>
+    </tr>
+    <tr>
+      <td>Conclusions & Insights</td>
+      <td>Feature importance, model results, healthcare impact</td>
+    </tr>
+  </tbody>
+</table>
+
 </body>
 </html>
