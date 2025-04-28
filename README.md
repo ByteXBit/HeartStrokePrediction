@@ -37,16 +37,35 @@ data.describe()
 We used **Plotly Express**, **Seaborn**, and **Matplotlib** to visualize various feature relationships with `stroke`:
 
 - **Gender vs Stroke** (Bar plot)
-- ![newplot](https://github.com/user-attachments/assets/7ba46767-37fb-4ed4-9fc8-3013fc0d1d9d)
+  ![newplot](https://github.com/user-attachments/assets/7ba46767-37fb-4ed4-9fc8-3013fc0d1d9d)
+  
 - **Age vs Stroke** (Scatter plot)
+  ![agevsstroke](https://github.com/user-attachments/assets/98995bf4-b5fa-4447-b505-74faea007988)
+  
 - **Hypertension vs Stroke** (Bar plot)
+  ![hypervsstroke](https://github.com/user-attachments/assets/da44c94d-ac76-4291-a30c-c66e98e6f757)
+  
 - **Heart Disease vs Stroke** (Bar plot)
+  ![hdvsstroke](https://github.com/user-attachments/assets/7dd78d27-368e-46f0-a693-45ec81516144)
+
 - **Marital Status vs Stroke** (Bar plot)
+  ![image](https://github.com/user-attachments/assets/36bc7146-412c-4368-808c-c158c68a3c25)
+
 - **Work Type vs Stroke** (Pie chart)
+  ![image](https://github.com/user-attachments/assets/4f93498b-6cf5-47e0-a4c1-ebc406eb7ecd)
+
 - **Residence Type vs Stroke** (Bar plot)
+  ![residencetypevsstroke](https://github.com/user-attachments/assets/48b1225c-56d2-49a7-82e9-c5bdc4feed09)
+
 - **Average Glucose Level vs Stroke** (Scatter plot)
+  ![image](https://github.com/user-attachments/assets/3e56c75f-6196-4973-a31a-ace2c1fcaea8)
+
 - **BMI vs Stroke** (Scatter plot)
+  ![image](https://github.com/user-attachments/assets/d91e1f9c-25f5-4ebd-9a11-7a6e1b606420)
+
 - **Smoking Status vs Stroke** (Pie chart)
+  ![image](https://github.com/user-attachments/assets/4037ec0c-e55a-4e5c-8c79-8557dac95b5f)
+
 
 These visualizations helped understand which features were more influential.
 
@@ -177,14 +196,6 @@ This end-to-end project helped us understand the critical steps in building a re
 ---
 
 # 📁 Dataset
-- **Healthcare Dataset for Stroke Prediction** (available on Kaggle).
+- **Healthcare Dataset for Stroke Prediction** ([available on Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)).
 
 ---
-
-# 📌 Important Note
-> This project was built strictly for **educational and academic learning purposes** as part of a class project and is not intended for professional medical diagnosis.
-
----
-
-Would you also like me to prepare a **Table of Contents** and **navigation links** at the top to make it even more professional? 🌟  
-Would you also like a **final GitHub Repository Structure** suggestion? 🚀
