@@ -37,6 +37,7 @@ data.describe()
 We used **Plotly Express**, **Seaborn**, and **Matplotlib** to visualize various feature relationships with `stroke`:
 
 - **Gender vs Stroke** (Bar plot)
+- ![newplot](https://github.com/user-attachments/assets/7ba46767-37fb-4ed4-9fc8-3013fc0d1d9d)
 - **Age vs Stroke** (Scatter plot)
 - **Hypertension vs Stroke** (Bar plot)
 - **Heart Disease vs Stroke** (Bar plot)
