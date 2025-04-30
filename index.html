@@ -4,190 +4,81 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Heart Stroke Prediction</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
      <style>
          body {
-             background-color: #2c2c2c;
              background-color: #2f2f2f;
+             background-color: #f5f0ff;
              color: #ffffff;
              font-family: 'Poppins', sans-serif;
-             line-height: 1.6;
+             font-family: 'Arial', sans-serif;
              margin: 0;
              padding: 20px;
+             font-size: 16px;
          }
-         h1, h2, h3 {
-             color: #ffffff;
-             border-bottom: 2px solid #555;
-             padding-bottom: 5px;
-         }
-         section {
-             background: #3a3a3a;
          .section {
              background-color: #3d3d3d;
+         .container {
+             max-width: 1000px;
+             margin: auto;
+         }
+         .card {
+             background-color: #ffffff;
+             color: #333333;
              padding: 20px;
-             border-radius: 10px;
-             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
              margin-bottom: 30px;
+             margin-bottom: 20px;
              border-radius: 12px;
              box-shadow: 0 4px 8px rgba(0,0,0,0.3);
              transition: transform 0.3s;
          }
-         img {
-             width: 100%;
-             max-width: 700px;
-             display: block;
-             margin: 20px auto;
-             border-radius: 10px;
-             box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-         }
-         table {
-             width: 100%;
-             border-collapse: collapse;
-             margin: 20px 0;
          .section:hover {
              transform: scale(1.02);
+             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
          }
-         th, td {
-             padding: 12px;
-             text-align: left;
-             border-bottom: 1px solid #555;
-         }
-         code {
-             background: #1f1f1f;
-             padding: 5px 10px;
-             border-radius: 5px;
-             display: block;
-             white-space: pre-wrap;
-             margin-top: 10px;
-             margin-bottom: 10px;
          h1, h2, h3 {
              color: #ffffff;
          }
          a {
-             color: #4fc3f7;
              color: #00bfff;
              text-decoration: none;
          }
          a:hover {
              color: #1e90ff;
              text-decoration: underline;
+             color: #4b0082;
          }
          img {
              width: 100%;
              height: auto;
              border-radius: 10px;
              box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+             border-radius: 8px;
+             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
              margin-top: 10px;
+             margin-bottom: 20px;
          }
          hr {
              border: 1px solid #555;
              margin: 40px 0;
+         a.button {
+             display: inline-block;
+             padding: 12px 24px;
+             background-color: #6a0dad;
+             color: #ffffff;
+             text-decoration: none;
+             border-radius: 8px;
+             margin-top: 20px;
+             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+             font-weight: bold;
+         }
+         a.button:hover {
+             background-color: #5800b2;
          }
      </style>
  </head>
  <body>
  
- <section>
- <h1>HeartStrokePrediction</h1>
- 
- <h2>Introduction</h2>
- <p>This project aims to analyze and predict the likelihood of a stroke based on various health factors using Machine Learning (ML) and Deep Learning (DL) models.<br>
- We performed detailed <strong>data cleaning</strong>, <strong>visualization</strong>, <strong>feature engineering</strong>, <strong>model building</strong>, and <strong>evaluation</strong>.<br>
- This was done as part of an academic project to understand end-to-end Machine Learning pipelines and Deep Learning modeling.</p>
- </section>
- 
- <section>
- <h2>1. Data Preprocessing</h2>
- 
- <h3>Loading and Exploring Data</h3>
- <ul>
- <li>The dataset <code>healthcare-dataset-stroke-data.csv</code> was loaded using <strong>pandas</strong>.</li>
- <li>Basic information such as <strong>shape</strong> and <strong>statistical description</strong> was obtained to understand the dataset.</li>
- </ul>
- 
- <code>data.shape
- data.describe()</code>
- 
- <h3>Handling Missing Values</h3>
- <ul>
- <li>The <code>bmi</code> column had missing values.</li>
- <li>Missing <code>bmi</code> values were filled with the <strong>mean</strong> value of BMI, grouped by <strong>gender</strong>, <strong>marital status</strong>, and <strong>age group</strong>.</li>
- <li>The <code>id</code> column was dropped.</li>
- </ul>
- 
- <h3>Feature Engineering</h3>
- <ul>
- <li>An <code>age_group</code> column was created to categorize individuals.</li>
- <li>Rows with ambiguous gender ("Other") were removed.</li>
- </ul>
- </section>
- 
- <section>
- <h2>2. Data Visualization and Analysis</h2>
- <p>We used <strong>Plotly Express</strong>, <strong>Seaborn</strong>, and <strong>Matplotlib</strong> to visualize:</p>
- 
- <ul>
- <li>Gender vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/7ba46767-37fb-4ed4-9fc8-3013fc0d1d9d" alt="Gender vs Stroke">
- 
- <li>Age vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/98995bf4-b5fa-4447-b505-74faea007988" alt="Age vs Stroke">
- 
- <li>Hypertension vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/da44c94d-ac76-4291-a30c-c66e98e6f757" alt="Hypertension vs Stroke">
- 
- <li>Heart Disease vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/7dd78d27-368e-46f0-a693-45ec81516144" alt="Heart Disease vs Stroke">
- 
- <li>Marital Status vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/36bc7146-412c-4368-808c-c158c68a3c25" alt="Marital Status vs Stroke">
- 
- <li>Work Type vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/4f93498b-6cf5-47e0-a4c1-ebc406eb7ecd" alt="Work Type vs Stroke">
- 
- <li>Residence Type vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/48b1225c-56d2-49a7-82e9-c5bdc4feed09" alt="Residence Type vs Stroke">
- 
- <li>Average Glucose Level vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/3e56c75f-6196-4973-a31a-ace2c1fcaea8" alt="Avg Glucose vs Stroke">
- 
- <li>BMI vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/d91e1f9c-25f5-4ebd-9a11-7a6e1b606420" alt="BMI vs Stroke">
- 
- <li>Smoking Status vs Stroke</li>
- <img src="https://github.com/user-attachments/assets/4037ec0c-e55a-4e5c-8c79-8557dac95b5f" alt="Smoking vs Stroke">
- </ul>
- </section>
- 
- <section>
- <h2>3. Handling Class Imbalance</h2>
- <p>The dataset was highly imbalanced. We used <strong>Upsampling</strong> and <strong>SMOTE</strong> to balance the dataset:</p>
- <ul>
- <li>Upsampling involved duplicating minority samples.</li>
- <li>SMOTE generated synthetic samples.</li>
- </ul>
- </section>
- 
- <section>
- <h2>4. Data Scaling</h2>
- <p>Continuous features like <code>age</code>, <code>avg_glucose_level</code>, and <code>bmi</code> were normalized using <strong>MinMaxScaler</strong> or <strong>StandardScaler</strong>.</p>
- </section>
- 
- <section>
- <h2>5. Machine Learning Models</h2>
- <p>We implemented and trained several models:</p>
- 
- <table>
- <tr><th>Model</th><th>Key Details</th></tr>
- <tr><td>Extra Trees Classifier</td><td>Ensemble method</td></tr>
- <tr><td>Random Forest Classifier</td><td>Ensemble method, tuned</td></tr>
- <tr><td>XGBoost Classifier</td><td>Advanced boosting</td></tr>
- <tr><td>Gradient Boosting Classifier</td><td>Boosted ensemble</td></tr>
- </table>
- 
- <p>Example model training:</p>
- <code>
  <div class="section">
      <h1>Heart Stroke Prediction</h1>
      <p>This project aims to analyze and predict the likelihood of a stroke based on various health factors using Machine Learning (ML) and Deep Learning (DL) models. We performed detailed <b>data cleaning</b>, <b>visualization</b>, <b>feature engineering</b>, <b>model building</b>, and <b>evaluation</b>. This was done as part of an academic project to understand end-to-end Machine Learning pipelines and Deep Learning modeling.</p>
@@ -200,6 +91,19 @@
      <h3>Loading and Exploring Data</h3>
      <p>The dataset <code>healthcare-dataset-stroke-data.csv</code> was loaded using <b>pandas</b>. Basic information such as <b>shape</b> and <b>statistical description</b> was obtained.</p>
      <pre><code>data.shape
+ <div class="container">
+ 
+     <div class="card">
+         <h1>HeartStrokePrediction</h1>
+         <h2>Introduction</h2>
+         <p>This project aims to analyze and predict the likelihood of a stroke based on various health factors using Machine Learning (ML) and Deep Learning (DL) models. We performed detailed <strong>data cleaning</strong>, <strong>visualization</strong>, <strong>feature engineering</strong>, <strong>model building</strong>, and <strong>evaluation</strong>. This was done as part of an academic project to understand end-to-end Machine Learning pipelines and Deep Learning modeling.</p>
+     </div>
+ 
+     <div class="card">
+         <h2>1. Data Preprocessing</h2>
+         <h3>Loading and Exploring Data</h3>
+         <p>The dataset <code>healthcare-dataset-stroke-data.csv</code> was loaded using pandas.</p>
+         <pre><code>data.shape
  data.describe()</code></pre>
  
      <h3>Handling Missing Values</h3>
@@ -264,6 +168,49 @@
      <h2>5. Machine Learning Models</h2>
      <p>Implemented Extra Trees, Random Forest, XGBoost, and Gradient Boosting classifiers.</p>
      <pre><code>
+         
+         <h3>Handling Missing Values</h3>
+         <p>- Filled missing <code>bmi</code> values with mean values grouped by gender, marital status, and age group.<br>- Dropped <code>id</code> column.</p>
+         
+         <h3>Feature Engineering</h3>
+         <p>- Created <code>age_group</code>.<br>- Removed rows with gender = 'Other'.</p>
+     </div>
+ 
+     <div class="card">
+         <h2>2. Data Visualization and Analysis</h2>
+         <p>We used Plotly Express, Seaborn, and Matplotlib.</p>
+         <img src="https://github.com/user-attachments/assets/7ba46767-37fb-4ed4-9fc8-3013fc0d1d9d" alt="Gender vs Stroke">
+         <img src="https://github.com/user-attachments/assets/98995bf4-b5fa-4447-b505-74faea007988" alt="Age vs Stroke">
+         <img src="https://github.com/user-attachments/assets/da44c94d-ac76-4291-a30c-c66e98e6f757" alt="Hypertension vs Stroke">
+         <img src="https://github.com/user-attachments/assets/7dd78d27-368e-46f0-a693-45ec81516144" alt="Heart Disease vs Stroke">
+         <img src="https://github.com/user-attachments/assets/36bc7146-412c-4368-808c-c158c68a3c25" alt="Marital Status vs Stroke">
+         <img src="https://github.com/user-attachments/assets/4f93498b-6cf5-47e0-a4c1-ebc406eb7ecd" alt="Work Type vs Stroke">
+         <img src="https://github.com/user-attachments/assets/48b1225c-56d2-49a7-82e9-c5bdc4feed09" alt="Residence Type vs Stroke">
+         <img src="https://github.com/user-attachments/assets/3e56c75f-6196-4973-a31a-ace2c1fcaea8" alt="Average Glucose Level vs Stroke">
+         <img src="https://github.com/user-attachments/assets/d91e1f9c-25f5-4ebd-9a11-7a6e1b606420" alt="BMI vs Stroke">
+         <img src="https://github.com/user-attachments/assets/4037ec0c-e55a-4e5c-8c79-8557dac95b5f" alt="Smoking Status vs Stroke">
+     </div>
+ 
+     <div class="card">
+         <h2>3. Handling Class Imbalance</h2>
+         <p>Used Upsampling and SMOTE to balance dataset.</p>
+     </div>
+ 
+     <div class="card">
+         <h2>4. Data Scaling</h2>
+         <p>Normalized <code>age</code>, <code>avg_glucose_level</code>, and <code>bmi</code> using MinMaxScaler or StandardScaler.</p>
+     </div>
+ 
+     <div class="card">
+         <h2>5. Machine Learning Models</h2>
+         <p>We implemented several models:</p>
+         <ul>
+             <li><strong>Extra Trees Classifier</strong></li>
+             <li><strong>Random Forest Classifier</strong></li>
+             <li><strong>XGBoost Classifier</strong></li>
+             <li><strong>Gradient Boosting Classifier</strong></li>
+         </ul>
+         <pre><code>
  etc_model = ExtraTreesClassifier()
  rfc_model = RandomForestClassifier(n_estimators=29, max_leaf_nodes=900, max_features=0.8, criterion='entropy')
  xgb_model = XGBClassifier(objective="binary:logistic", eval_metric="auc")
@@ -273,84 +220,39 @@
  
  for model in models:
      model.fit(x_train, y_train)
- </code>
- </section>
- 
- <section>
- <h2>6. Deep Learning Models (ANN)</h2>
- <h3>Basic Neural Network</h3>
- <p>A simple ANN model:</p>
- <code>
      </code></pre>
  </div>
  
  <div class="section">
      <h2>6. Deep Learning Models (ANN)</h2>
+         </code></pre>
+     </div>
  
      <h3>Basic Neural Network</h3>
      <pre><code>
+     <div class="card">
+         <h2>6. Deep Learning Models (ANN)</h2>
+         <h3>Basic Neural Network</h3>
+         <pre><code>
  model = Sequential([
      Dense(16, input_dim=X.shape[1], activation='relu'),
      Dense(8, activation='relu'),
      Dense(1, activation='sigmoid')
  ])
- </code>
      </code></pre>
+         </code></pre>
  
- <h3>Improved Neural Network</h3>
- <p>Handled imbalance with SMOTE and added Dropout:</p>
- <code>
      <h3>Improved Neural Network</h3>
      <pre><code>
+         <h3>Improved Neural Network</h3>
+         <pre><code>
  model = Sequential([
      Dense(32, activation='relu', input_dim=X_train.shape[1]),
      Dropout(0.3),
- @@ -197,48 +160,43 @@
+ @@ -160,43 +141,38 @@
  ])
  
  early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
- </code>
- </section>
- 
- <section>
- <h2>7. Evaluation</h2>
- <ul>
- <li>Classification reports showed precision, recall, and f1-score.</li>
- <li>Confusion matrices visualized model performance.</li>
- <li>Test accuracy was measured for all models.</li>
- </ul>
- </section>
- 
- <section>
- <h2>8. Conclusion</h2>
- <p>Through this project, we learned how to:</p>
- <ul>
- <li>Preprocess healthcare datasets.</li>
- <li>Handle missing values thoughtfully.</li>
- <li>Balance datasets with resampling and SMOTE.</li>
- <li>Build and evaluate ML and DL models.</li>
- <li>Use proper evaluation techniques.</li>
- </ul>
- <p>This helped us understand critical steps in healthcare prediction systems.</p>
- </section>
- 
- <section>
- <h2>📊 Technologies Used</h2>
- <ul>
- <li>Python</li>
- <li>Pandas, Numpy</li>
- <li>Matplotlib, Seaborn, Plotly Express</li>
- <li>Scikit-learn</li>
- <li>XGBoost</li>
- <li>TensorFlow, Keras</li>
- <li>imbalanced-learn (SMOTE)</li>
- </ul>
- </section>
- 
- <section>
- <h2>📁 Dataset</h2>
- <p><strong>Healthcare Dataset for Stroke Prediction</strong> (<a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank">available on Kaggle</a>).</p>
- </section>
      </code></pre>
  </div>
  
@@ -378,6 +280,37 @@
          <li>imbalanced-learn (SMOTE)</li>
      </ul>
  </div>
+         </code></pre>
+     </div>
+ 
+     <div class="card">
+         <h2>7. Evaluation</h2>
+         <p>Used Classification Reports, Confusion Matrices, and Accuracy Scores.</p>
+     </div>
+ 
+     <div class="card">
+         <h2>8. Conclusion</h2>
+         <p>Learned complete Machine Learning and Deep Learning pipeline creation with healthcare datasets.</p>
+     </div>
+ 
+     <div class="card">
+         <h2>📊 Technologies Used</h2>
+         <p>Python, Pandas, Numpy, Matplotlib, Seaborn, Plotly Express, Scikit-learn, XGBoost, TensorFlow, Keras, imbalanced-learn (SMOTE).</p>
+     </div>
+ 
+     <div class="card">
+         <h2>📁 Dataset</h2>
+         <p><a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank">Healthcare Dataset for Stroke Prediction (Kaggle)</a></p>
+     </div>
+ 
+     <div class="card">
+         <h2>About the Team</h2>
+         <p>Atharva Chhaparwal (23ucs550)<br>Aryan Dadhich (23ucs547)<br>Aviral Saini (23ucs551)</p>
+     </div>
+ 
+     <div class="card" style="text-align:center;">
+         <a href="https://colab.research.google.com/drive/11rXUSkdFqVqbTrouzHW0VSrDDWYIu5C9?usp=sharing#scrollTo=XEmfFdxWpEAI" class="button" target="_blank">Open Project Notebook on Google Colab</a>
+     </div>
  
  <div class="section">
      <h2>📁 Dataset</h2>
